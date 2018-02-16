@@ -1,0 +1,237 @@
+ECE4960 Programming Assignment1
+@author Haohan Chen - hc937
+@Language: Java
+@Platform: Eclipse
+@OS: MacOS
+@since 1.0
+@version 1.0
+@02/14/2018
+ 
+1.Implement and observe integer overflows
+(1) Use multiplication to cause integer overflow
+5000*5000 doesn't overflow, the product is25000000
+500000*500000 overflows
+(2) Use factorial to cause integer overflow
+1! doesn't overflow, the factorial is1
+2! doesn't overflow, the factorial is2
+3! doesn't overflow, the factorial is6
+4! doesn't overflow, the factorial is24
+5! doesn't overflow, the factorial is120
+6! doesn't overflow, the factorial is720
+7! doesn't overflow, the factorial is5040
+8! doesn't overflow, the factorial is40320
+9! doesn't overflow, the factorial is362880
+10! doesn't overflow, the factorial is3628800
+11! doesn't overflow, the factorial is39916800
+12! doesn't overflow, the factorial is479001600
+13! overflows
+(3) Use Fibonossi numbers to cause integer overflow
+1order Fibonossi doesn't overflow, the factorial is1
+2order Fibonossi doesn't overflow, the factorial is1
+3order Fibonossi doesn't overflow, the factorial is2
+4order Fibonossi doesn't overflow, the factorial is3
+5order Fibonossi doesn't overflow, the factorial is5
+6order Fibonossi doesn't overflow, the factorial is8
+7order Fibonossi doesn't overflow, the factorial is13
+8order Fibonossi doesn't overflow, the factorial is21
+9order Fibonossi doesn't overflow, the factorial is34
+10order Fibonossi doesn't overflow, the factorial is55
+11order Fibonossi doesn't overflow, the factorial is89
+12order Fibonossi doesn't overflow, the factorial is144
+13order Fibonossi doesn't overflow, the factorial is233
+14order Fibonossi doesn't overflow, the factorial is377
+15order Fibonossi doesn't overflow, the factorial is610
+16order Fibonossi doesn't overflow, the factorial is987
+17order Fibonossi doesn't overflow, the factorial is1597
+18order Fibonossi doesn't overflow, the factorial is2584
+19order Fibonossi doesn't overflow, the factorial is4181
+20order Fibonossi doesn't overflow, the factorial is6765
+21order Fibonossi doesn't overflow, the factorial is10946
+22order Fibonossi doesn't overflow, the factorial is17711
+23order Fibonossi doesn't overflow, the factorial is28657
+24order Fibonossi doesn't overflow, the factorial is46368
+25order Fibonossi doesn't overflow, the factorial is75025
+26order Fibonossi doesn't overflow, the factorial is121393
+27order Fibonossi doesn't overflow, the factorial is196418
+28order Fibonossi doesn't overflow, the factorial is317811
+29order Fibonossi doesn't overflow, the factorial is514229
+30order Fibonossi doesn't overflow, the factorial is832040
+31order Fibonossi doesn't overflow, the factorial is1346269
+32order Fibonossi doesn't overflow, the factorial is2178309
+33order Fibonossi doesn't overflow, the factorial is3524578
+34order Fibonossi doesn't overflow, the factorial is5702887
+35order Fibonossi doesn't overflow, the factorial is9227465
+36order Fibonossi doesn't overflow, the factorial is14930352
+37order Fibonossi doesn't overflow, the factorial is24157817
+38order Fibonossi doesn't overflow, the factorial is39088169
+39order Fibonossi doesn't overflow, the factorial is63245986
+40order Fibonossi doesn't overflow, the factorial is102334155
+41order Fibonossi doesn't overflow, the factorial is165580141
+42order Fibonossi doesn't overflow, the factorial is267914296
+43order Fibonossi doesn't overflow, the factorial is433494437
+44order Fibonossi doesn't overflow, the factorial is701408733
+45order Fibonossi doesn't overflow, the factorial is1134903170
+46order Fibonossi doesn't overflow, the factorial is1836311903
+47order Fibonossi overflows
+ 
+2. Divide 1 by 0 to create the exception
+1/0's result is
+Exceprion thrown :java.lang.ArithmeticException: / by zero
+ 
+3. Implement floating-point overflow and compare the result to infinity and max floating-point number
+Compared to infinity, 1.2 * 10^300 doesn't overflow, the value is1.2000000000000002E300
+Compared to infinity, 1.2 * 10^301 doesn't overflow, the value is1.2E301
+Compared to infinity, 1.2 * 10^302 doesn't overflow, the value is1.2E302
+Compared to infinity, 1.2 * 10^303 doesn't overflow, the value is1.2E303
+Compared to infinity, 1.2 * 10^304 doesn't overflow, the value is1.2E304
+Compared to infinity, 1.2 * 10^305 doesn't overflow, the value is1.2E305
+Compared to infinity, 1.2 * 10^306 doesn't overflow, the value is1.1999999999999998E306
+Compared to infinity, 1.2 * 10^307 doesn't overflow, the value is1.1999999999999998E307
+Compared to infinity, 1.2 * 10^308 doesn't overflow, the value is1.1999999999999997E308
+Compared to infinity, 1.2 * 10^309 overflows
+Compared to max floating point number, 1.2 * 10^300 doesn't overflow, the value is1.2000000000000002E300
+Compared to max floating point number, 1.2 * 10^301 doesn't overflow, the value is1.2E301
+Compared to max floating point number, 1.2 * 10^302 doesn't overflow, the value is1.2E302
+Compared to max floating point number, 1.2 * 10^303 doesn't overflow, the value is1.2E303
+Compared to max floating point number, 1.2 * 10^304 doesn't overflow, the value is1.2E304
+Compared to max floating point number, 1.2 * 10^305 doesn't overflow, the value is1.2E305
+Compared to max floating point number, 1.2 * 10^306 doesn't overflow, the value is1.1999999999999998E306
+Compared to max floating point number, 1.2 * 10^307 doesn't overflow, the value is1.1999999999999998E307
+Compared to max floating point number, 1.2 * 10^308 doesn't overflow, the value is1.1999999999999997E308
+Compared to max floating point number, 1.2 * 10^309 overflows
+ 
+4. Generate and implement INF and NINF
+(1) Observe the behavior of INF
+The result of 1/INF is 0.0
+The result of sin(INF) is NaN
+The result of exp(INF) is Infinity
+(2) Observe the behavior of NINF
+The result of 1/NINF is -0.0
+The result of sin(NINF) is NaN
+The result of exp(NINF) is 0.0
+(3) Test the propogation of INF
+INF + 2.0 = Infinity
+INF - 2.0 = Infinity
+INF * 2.0 = Infinity
+INF / 2.0 = Infinity
+(4) Test the propogation of NINF
+NINF + -2.0 = -Infinity
+NINF - -2.0 = -Infinity
+NINF * -2.0 = Infinity
+NINF / -2.0 = Infinity
+(5) Test the Interaction of INF
+INF + INF = Infinity
+INF - INF = NaN
+NINF + NINF = -Infinity
+INF + NINF = NaN
+INF * INF = Infinity
+INF / INF = NaN
+(6) Test whether 1.2 * 10^310 is infinity
+Infinity is positive infinite number
+ 
+5. Operation of NaN
+(1) Detect whether 1.0 and 0.0/0.0 are numbers
+1.0 is a number
+NaN isn't a number
+(2) Observe the propogation of NaN
+NaN + 2.0 = NaN
+NaN - 2.0 = NaN
+NaN * 2.0 = NaN
+NaN / 2.0 = NaN
+(3) Observe the interaction of NaN
+NaN + NaN = NaN
+NaN - NaN = NaN
+NaN * NaN = NaN
+NaN / NaN = NaN
+ 
+6. Generate and observe signed zero
+1) Observe the signed zero handling
+log(+0) = -Infinity
+sin(+0)/(+0) = NaN
+log(-0) = -Infinity
+sin(-0)/(-0) = NaN
+sin(-0)/|-0| = NaN
+(2) Detect whether a number is a signed zero
+0.0 is positive zero
+ 
+7. Observation of floating-point gradual underflow
+1.2345678 * 10^-300 - 1.2345677 * 10^-300 = 1.0000000008188847E-307
+1.2345678 * 10^-300 / 1.2345677 * 10^-300 = 1.0000000810000134
+lim(x to 0) sin(1.23456789012345*x)/x = 1.23456789012345
+1.2345678 * 10^-301 - 1.2345677 * 10^-301 = 1.000000001233337E-308
+1.2345678 * 10^-301 / 1.2345677 * 10^-301 = 1.0000000810000134
+lim(x to 0) sin(1.23456789012345*x)/x = 1.2345678901234503
+1.2345678 * 10^-302 - 1.2345677 * 10^-302 = 9.9999999967914E-310
+1.2345678 * 10^-302 / 1.2345677 * 10^-302 = 1.0000000810000131
+lim(x to 0) sin(1.23456789012345*x)/x = 1.2345678901234476
+1.2345678 * 10^-303 - 1.2345677 * 10^-303 = 1.0000000003267E-310
+1.2345678 * 10^-303 / 1.2345677 * 10^-303 = 1.0000000810000131
+lim(x to 0) sin(1.23456789012345*x)/x = 1.2345678901234511
+1.2345678 * 10^-304 - 1.2345677 * 10^-304 = 9.99999999517E-312
+1.2345678 * 10^-304 / 1.2345677 * 10^-304 = 1.0000000810000131
+lim(x to 0) sin(1.23456789012345*x)/x = 1.2345678901234096
+1.2345678 * 10^-305 - 1.2345677 * 10^-305 = 1.000000000023E-312
+1.2345678 * 10^-305 / 1.2345677 * 10^-305 = 1.0000000810000131
+lim(x to 0) sin(1.23456789012345*x)/x = 1.2345678901252883
+1.2345678 * 10^-306 - 1.2345677 * 10^-306 = 1.00000000066E-313
+1.2345678 * 10^-306 / 1.2345677 * 10^-306 = 1.0000000810000134
+lim(x to 0) sin(1.23456789012345*x)/x = 1.234567890144929
+1.2345678 * 10^-307 - 1.2345677 * 10^-307 = 1.0000000014E-314
+1.2345678 * 10^-307 / 1.2345677 * 10^-307 = 1.0000000810000134
+lim(x to 0) sin(1.23456789012345*x)/x = 1.2345678902065347
+1.2345678 * 10^-308 - 1.2345677 * 10^-308 = 1.000000003E-315
+1.2345678 * 10^-308 / 1.2345677 * 10^-308 = 1.0000000810000136
+lim(x to 0) sin(1.23456789012345*x)/x = 1.2345678917192295
+1.2345678 * 10^-309 - 1.2345677 * 10^-309 = 1.00000003E-316
+1.2345678 * 10^-309 / 1.2345677 * 10^-309 = 1.0000000810000158
+lim(x to 0) sin(1.23456789012345*x)/x = 1.2345678847657136
+1.2345678 * 10^-310 - 1.2345677 * 10^-310 = 1.0E-317
+1.2345678 * 10^-310 / 1.2345677 * 10^-310 = 1.0000000810000318
+lim(x to 0) sin(1.23456789012345*x)/x = 1.2345679866286103
+1.2345678 * 10^-311 - 1.2345677 * 10^-311 = 1.0E-318
+1.2345678 * 10^-311 / 1.2345677 * 10^-311 = 1.0000000809999119
+lim(x to 0) sin(1.23456789012345*x)/x = 1.2345678402387328
+1.2345678 * 10^-312 - 1.2345677 * 10^-312 = 1.0E-319
+1.2345678 * 10^-312 / 1.2345677 * 10^-312 = 1.0000000809991114
+lim(x to 0) sin(1.23456789012345*x)/x = 1.2345849802371542
+1.2345678 * 10^-313 - 1.2345677 * 10^-313 = 1.0E-320
+1.2345678 * 10^-313 / 1.2345677 * 10^-313 = 1.0000000809991114
+lim(x to 0) sin(1.23456789012345*x)/x = 1.234683794466403
+1.2345678 * 10^-314 - 1.2345677 * 10^-314 = 1.003E-321
+1.2345678 * 10^-314 / 1.2345677 * 10^-314 = 1.0000000812392273
+lim(x to 0) sin(1.23456789012345*x)/x = 1.2364532019704433
+1.2345678 * 10^-315 - 1.2345677 * 10^-315 = 1.0E-322
+1.2345678 * 10^-315 / 1.2345677 * 10^-315 = 1.0000000800386477
+lim(x to 0) sin(1.23456789012345*x)/x = 1.25
+1.2345678 * 10^-316 - 1.2345677 * 10^-316 = 1.0E-323
+1.2345678 * 10^-316 / 1.2345677 * 10^-316 = 1.000000080038649
+lim(x to 0) sin(1.23456789012345*x)/x = 1.0
+1.2345678 * 10^-317 - 1.2345677 * 10^-317 = 0.0
+1.2345678 * 10^-317 / 1.2345677 * 10^-317 = 1.0
+lim(x to 0) sin(1.23456789012345*x)/x = NaN
+1.2345678 * 10^-318 - 1.2345677 * 10^-318 = 0.0
+1.2345678 * 10^-318 / 1.2345677 * 10^-318 = 1.0
+lim(x to 0) sin(1.23456789012345*x)/x = NaN
+1.2345678 * 10^-319 - 1.2345677 * 10^-319 = 0.0
+1.2345678 * 10^-319 / 1.2345677 * 10^-319 = 1.0
+lim(x to 0) sin(1.23456789012345*x)/x = NaN
+1.2345678 * 10^-320 - 1.2345677 * 10^-320 = 0.0
+1.2345678 * 10^-320 / 1.2345677 * 10^-320 = 1.0
+lim(x to 0) sin(1.23456789012345*x)/x = NaN
+1.2345678 * 10^-321 - 1.2345677 * 10^-321 = 0.0
+1.2345678 * 10^-321 / 1.2345677 * 10^-321 = 1.0
+lim(x to 0) sin(1.23456789012345*x)/x = NaN
+1.2345678 * 10^-322 - 1.2345677 * 10^-322 = 0.0
+1.2345678 * 10^-322 / 1.2345677 * 10^-322 = 1.0
+lim(x to 0) sin(1.23456789012345*x)/x = NaN
+1.2345678 * 10^-323 - 1.2345677 * 10^-323 = 0.0
+1.2345678 * 10^-323 / 1.2345677 * 10^-323 = 1.0
+lim(x to 0) sin(1.23456789012345*x)/x = NaN
+1.2345678 * 10^-324 - 1.2345677 * 10^-324 = 0.0
+1.2345678 * 10^-324 / 1.2345677 * 10^-324 = NaN
+lim(x to 0) sin(1.23456789012345*x)/x = NaN
+ 
+8. Calculate π and display 30 digits
+Referenced: http://turner.faculty.swau.edu/mathematics/materialslibrary/pi/piforms.html
+The value of π is:
+3.141592653589793238462643383279
