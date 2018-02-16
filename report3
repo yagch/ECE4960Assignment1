@@ -1,4 +1,4 @@
-This report is to compare my result to the result of my teammate. I'm using Java on Eclipse on MacOS, my teammate uses C++ on  on MacOS
+This report is to compare my result to the result of my teammate. I'm using Java on Eclipse on MacOS, my teammate uses C++ on xcode on MacOS
 The difference between the result of two platform/languages are:
 1.In Java, integer diveded by zero is implemented with exception. However, in C++, integer divided by zero will become error and stop the operation.
 2.In C++, we can detect signed zero by signedbit. However, in Java, we don't have signedbit so we need to detect it by hand. 
